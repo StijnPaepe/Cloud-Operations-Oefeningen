@@ -1,0 +1,9 @@
+We moeten in onze cluster een uptime-kuma instantie laten werken, dit heb ik via verschillende yaml files gedaan.
+
+ik heb eerst de namespace gemaakt zoals in uptimekuma-namespace.yaml.
+
+Dan heb ik in onderstaande volgorde de volgende yaml files gemaakt en in Lens toegepast.
+	uptimekuma-pvc.yaml
+	uptimekuma-service.yaml
+	uptimekuma-deployment.yaml
+	uptimekuma-ingress.yaml

@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wordpress-ingress
+  namespace: final-exercise
+  annotations: 
+    cert-manager.io/cluster-issuer: cluster-issuer
+spec:
+  tls:
+  - hosts:
+    - wordpress.75.co.ucll.cloud
+    secretName: wordpress-tls
+  rules:
+    - host: wordpress.75.co.ucll.cloud
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: wordpress-service
+                port:
+                  number: 80    

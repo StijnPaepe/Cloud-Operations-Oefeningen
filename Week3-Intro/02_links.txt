@@ -1,0 +1,5 @@
+resource limits
+	https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
+
+probes
+	https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/

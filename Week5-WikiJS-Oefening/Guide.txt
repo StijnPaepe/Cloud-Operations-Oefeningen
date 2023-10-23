@@ -1,0 +1,10 @@
+We moeten in onze cluster een wiki js instantie laten werken, dit heb ik via een helm chart gedaan.
+
+ik heb eerst de namespace gemaakt zoals in wikijs-namespace.yaml.
+
+Dan heb ik in values.yaml de resources en limits aangepast.
+
+Tot slot heb ik de chart en veranderingen toegepast op de correcte namespace
+door volgend commando in de lens terminal in te voeren.
+
+    helm install wiki-js --namespace wiki-js-app -f values.yaml requarks/wiki

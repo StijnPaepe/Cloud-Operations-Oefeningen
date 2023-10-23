@@ -1,0 +1,11 @@
+redmineUsername: admin
+redminePassword: password
+
+databaseType: postgresql
+mariadb:
+  enabled: false
+postgresql:
+  enabled: true
+  postgresqlDatabase: redmine
+  postgresqlUsername: redmine
+  postgresqlPassword: password

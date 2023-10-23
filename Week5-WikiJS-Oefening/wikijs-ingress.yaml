@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wiki-js-ingress
+  namespace: wiki-js-app
+  annotations: 
+    cert-manager.io/cluster-issuer: cluster-issuer
+spec:
+  tls:
+  - hosts:
+    - wiki.75.co.ucll.cloud
+    secretName: wikijs-tls
+  rules:
+    - host: wiki.75.co.ucll.cloud
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: wiki-js
+                port:
+                  number: 80    

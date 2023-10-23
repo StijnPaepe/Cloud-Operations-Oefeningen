@@ -1,0 +1,12 @@
+We moeten in onze cluster een redmine instantie laten werken, dit heb ik via een helm chart gedaan.
+
+ik heb eerst de namespace gemaaktzoals in redmine-namespace.yaml.
+
+Dan heb ik in values.yaml enkele dingen uit de chart aangepast.
+
+Daarna heb ik de chart en veranderingen toegepast op de correcte namespace
+door volgend commando in de lens terminal in te voeren.
+
+    helm install redmine --namespace redmine-app -f values.yaml bitnamicharts/redmine
+
+Tot slot heb ik de ingress uit redmine-ingress.yaml toegepast

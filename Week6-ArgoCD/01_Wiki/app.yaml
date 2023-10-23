@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: wiki
+  namespace: argocd
+spec:
+  sources:
+  - repoURL: https://charts.js.wiki
+    chart: wiki
+    targetRevision: x
+    helm:
+      valueFiles:
+        - $values/01_Wiki/values.yaml
+  - repoURL: 'https://github.com/cloud-operations-2324/intro-to-kubernetes-StijnPaepe.git'
+  
+    targetRevision: main
+    ref: values
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: wiki
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -1,0 +1,31 @@
+1)de helm repo toevoegen
+	helm repo add jetstack https://charts.jetstack.io
+
+2)de crd's installeren door commando in Lens terminal in te voeren
+	kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.13.1/cert-manager.crds.yaml
+
+3)goeie namespace maken
+	sudo kubectl create namespace cert-manager
+
+4)chart installeren door commando in Lens terminal in te voeren
+	helm install \
+  	cert-manager jetstack/cert-manager \
+  	--namespace cert-manager \
+  	--create-namespace \
+  	--version v1.13.1 \
+  	# --set installCRDs=true
+
+5)onderstaande code aanpassen naar wat in cluster-issuer.yaml staat en deployen
+
+-------------------
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: ca-issuer
+  namespace: sandbox
+spec:
+  ca:
+    secretName: ca-key-pair
+-------------------
+
+6)ingress maken zoals in updated-wordpress-ingress.yaml en deployen

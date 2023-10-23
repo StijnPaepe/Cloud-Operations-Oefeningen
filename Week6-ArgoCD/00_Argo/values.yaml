@@ -1,0 +1,20 @@
+server:
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: cluster-issuer
+    hosts:
+      - "argocd.75.co.ucll.cloud"
+    tls:
+      - secretName: argocd-tls
+        hosts:
+          - "argocd.75.co.ucll.cloud"
+
+configs:
+  params:
+    server.insecure: true
+
+
+---
+    #helm install argocd --namespace argocd-app -f values.yaml oci://registry-1.docker.io/bitnamicharts/argo-cd
+    helm install argocd --namespace argocd-app -f values.yaml argocd/argo-cd --version 5.46.8

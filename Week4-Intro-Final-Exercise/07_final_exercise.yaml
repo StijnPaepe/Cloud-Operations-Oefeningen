@@ -1,0 +1,20 @@
+# In this file, make your final exercise.
+
+#Try and deploy a working instance of WordPress, complete with database, networking, et cetera.
+
+#Your Wordpress should:
+
+#Be running on 'wordpress.r-number.co.ucll.cloud' (use an ingress)
+#Be a separate deployment
+#Have resource limits and and health check probes
+#OPTIONAL: Make use of secrets for environment variables
+
+#Your database should:
+
+#Not be accessible from the outside world (or outside your namespace)
+#Be a separate deployment
+#Have resource limits
+#OPTIONAL: Make use of secrets for environment variables
+
+#Create namespace: final-exercise
+sudo kubectl create namespace final-exercise
