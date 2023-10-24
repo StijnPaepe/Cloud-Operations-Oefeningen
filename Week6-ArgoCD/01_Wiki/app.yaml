@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: wiki
+  name: wiki-js
   namespace: argocd
 spec:
   sources:
@@ -10,14 +10,13 @@ spec:
     targetRevision: x
     helm:
       valueFiles:
-        - $values/01_Wiki/values.yaml
-  - repoURL: 'https://github.com/cloud-operations-2324/intro-to-kubernetes-StijnPaepe.git'
-  
+        - $values/Week6-ArgoCD/01_Wiki/values.yaml
+  - repoURL: 'https://github.com/StijnPaepe/Cloud-Operations-Oefeningen.git'
     targetRevision: main
     ref: values
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: wiki
+    namespace: wiki-js-app
   project: default
   syncPolicy:
     automated:
