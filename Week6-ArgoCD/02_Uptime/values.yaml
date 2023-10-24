@@ -3,11 +3,11 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: cluster-issuer
   hosts:
-    - host: uptime-demo.75.co.ucll.cloud
+    - host: up.75.co.ucll.cloud
       paths:
         - path: /
           pathType: Prefix
   tls:
-    - secretName: uptime-demo-kuma-tls
+    - secretName: uptime-kuma-tls
       hosts:
-        - uptime-demo.75.co.ucll.cloud
+        - up.75.co.ucll.cloud
