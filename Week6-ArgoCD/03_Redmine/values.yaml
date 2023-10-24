@@ -1,16 +1,3 @@
-redmineUsername: admin
-redminePassword: password
-
-databaseType: postgresql
-
-mariadb:
-  enabled: false
-postgresql:
-  enabled: true
-  auth:
-    postgresqlUsername: username
-    postgresqlPassword: password
-    
 ingress:
   enabled: true
   certManager: true
@@ -18,3 +5,21 @@ ingress:
   tls: true
   annotations:
     cert-manager.io/cluster-issuer: cluster-issuer
+  
+
+redmineUsername: admin
+redminePassword: password
+
+databaseType: mariadb
+
+mariadb:
+  enabled: true
+  auth:
+    rootPassword: password
+    username: username
+
+postgresql:
+  enabled: true
+  auth:
+    postgresqlUsername: username
+    postgresqlPassword: password
