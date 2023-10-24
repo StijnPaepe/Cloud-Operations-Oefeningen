@@ -6,6 +6,6 @@ mariadb:
   enabled: false
 postgresql:
   enabled: true
-  postgresqlDatabase: redmine
-  postgresqlUsername: redmine
-  postgresqlPassword: password
+  auth:
+    postgresqlUsername: username
+    postgresqlPassword: password
