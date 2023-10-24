@@ -2,6 +2,7 @@ redmineUsername: admin
 redminePassword: password
 
 databaseType: postgresql
+
 mariadb:
   enabled: false
 postgresql:
@@ -12,8 +13,8 @@ postgresql:
 
 ingress:
   enabled: true
-  hosts:
-    - host: support.75.co.ucll.cloud
-      paths:
-        - path: "/"
-          pathType: Prefix
+  certManager: true
+  hostname: support.75.co.ucll.cloud
+  tls: true
+  annotations:
+    cert-manager.io/cluster-issuer: cluster-issuer
