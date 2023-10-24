@@ -17,4 +17,4 @@ configs:
 
 ---
     #helm install argocd --namespace argocd-app -f values.yaml oci://registry-1.docker.io/bitnamicharts/argo-cd
-    helm install argocd --namespace argocd-app -f values.yaml argocd/argo-cd --version 5.46.8
+    helm install argocd --namespace argocd -f values.yaml argocd/argo-cd --version 5.46.8
