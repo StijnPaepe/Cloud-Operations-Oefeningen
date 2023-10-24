@@ -11,7 +11,7 @@ spec:
     helm:
       valueFiles:
         - $values/Week6-ArgoCD/02_Uptime/values.yaml
-  - repoURL: 'https://github.com/Cloud-Computing-2324/deployment-exercises-Tiebevn.git'
+  - repoURL: 'https://github.com/StijnPaepe/Cloud-Operations-Oefeningen.git'
     targetRevision: main
     ref: values
   destination:
