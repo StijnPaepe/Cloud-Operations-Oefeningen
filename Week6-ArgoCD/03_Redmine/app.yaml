@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: redmine
+  namespace: argocd
+spec:
+  sources:
+  - repoURL: https://charts.bitnami.com/bitnami
+    chart: redmine
+    targetRevision: 25.0.1
+    helm:
+      valueFiles:
+        - $values/Week6-ArgoCD/03_Redmine/values.yaml
+  - repoURL: 'https://github.com/StijnPaepe/Cloud-Operations-Oefeningen.git'
+    targetRevision: main
+    ref: values
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: redmine-app
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
