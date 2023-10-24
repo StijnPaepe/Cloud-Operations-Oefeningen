@@ -1,24 +1,10 @@
 ingress:
   enabled: true
-  annotations:
-    cert-manager.io/cluster-issuer: cluster-issuer
   hosts:
     - host: support.75.co.ucll.cloud
       paths:
         - path: /
           pathType: Prefix
-  tls:
-    - secretName: redmine-tls
-      hosts:
-        - support.75.co.ucll.cloud
-
-#ingress:
-  #enabled: true
-  #hosts:
-    #- host: support.75.co.ucll.cloud
-      #paths:
-        #- path: /
-          #pathType: Prefix
 
 redmineUsername: admin
 redminePassword: password
