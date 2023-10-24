@@ -12,4 +12,8 @@ postgresql:
 
 ingress:
   enabled: true
-  hostname: support.75.co.ucll.cloud
+  hosts:
+    - host: support.75.co.ucll.cloud
+      paths:
+        - path: "/"
+          pathType: Prefix
