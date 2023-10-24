@@ -5,9 +5,9 @@ metadata:
   namespace: argocd
 spec:
   sources:
-  - repoURL: https://charts.bitnami.com/bitnami
+  - repoURL: https://charts.bitnami.com/bitnami #oci://registry-1.docker.io/bitnamicharts https://charts.bitnami.com/bitnami
     chart: redmine
-    targetRevision: 25.0.1
+    targetRevision: x
     helm:
       valueFiles:
         - $values/Week6-ArgoCD/03_Redmine/values.yaml

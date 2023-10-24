@@ -1,15 +1,3 @@
-redmineUsername: admin
-redminePassword: password
-
-#databaseType: postgresql
-#mariadb:
-  #enabled: false
-#postgresql:
-  #enabled: true
-  #postgresqlDatabase: redmine
-  #postgresqlUsername: redmine
-  #postgresqlPassword: password
-
 ingress:
   enabled: true
   annotations:
@@ -23,3 +11,16 @@ ingress:
     - secretName: redmine-tls
       hosts:
         - support.75.co.ucll.cloud
+
+
+redmineUsername: admin
+redminePassword: password
+
+#databaseType: postgresql
+#mariadb:
+  #enabled: false
+#postgresql:
+  #enabled: true
+  #postgresqlDatabase: redmine
+  #postgresqlUsername: redmine
+  #postgresqlPassword: password
